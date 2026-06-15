@@ -1,0 +1,117 @@
+/* ------------------------------------------------------- */
+/* COLOR SCHEME VARIABLES — Designed for ML/DS/AI Themes */
+/* ------------------------------------------------------- */
+
+/* LIGHT THEME VARIABLES */
+:root {
+  /* Core Colors */
+  --primary-color: #007bff;
+  --secondary-color: #5c7570;
+  --hover-color: #0196b1;
+  --accent-gradient: linear-gradient(135deg, #28a745, #17a2b8);
+  --secondary-gradient: linear-gradient(135deg, #5ca9e9, #00c2ff);
+  --accent-color: #dff0e8;
+
+  /* Background & Borders */
+  --background-color: #ffffff;
+  --secondary-background-color: #f8f9fa;
+  --card-background: #e7f0e9;
+  --border-color: #dee2e6;
+  --divider-color: #ced4da;
+
+  /* Text & Fonts */
+  --text-color: #212529;
+  --heading-color: #343a40;
+  --font-primary: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-size-base: 16px;
+  --font-size-xl: 32px;
+  --font-size-lg: 24px;
+  --font-size-md: 18px;
+  --font-size-sm: 14px;
+
+  /* Effects */
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --secondary-shadow-color: rgba(0, 148, 86, 0.8);
+  --radius: 8px;
+  --transition-speed: 0.3s ease-in-out;
+
+  /* Component-Specific */
+  --navbar-bg: var(--card-background);
+  --navbar-text: var(--text-color);
+  --navbar-hover: var(--hover-color);
+  --footer-bg: var(--card-background);
+  --scroll-up-bg: var(--primary-color);
+  --link-color: #d4d6d6;
+  --scroll-up-color: #ffffff;
+  --theme-toggle-bg: #1c1c1c;
+  --theme-toggle-color: #f4f4f4;
+  --link-color: #007bff;
+
+  /* border specific */
+  --border-color: #dfe6ee;
+  --border-opacity: 0.3;
+
+  /* Gradient */
+  --gradient: linear-gradient(270deg, #b87070, #ca9a6a, #7cc05c, #82fac8, #54b5e2, #df6ca5);
+}
+
+/* DARK THEME OVERRIDES */
+body.dark-theme {
+  /* Core Colors */
+  --primary-color: #0ab7d1;
+  --secondary-color: #adb5bd;
+  --hover-color: #10b937;
+  --accent-color: #363636;
+  --accent-gradient: linear-gradient(135deg, #17a2b8, #007bff);
+  --secondary-gradient: linear-gradient(135deg, #007954, #00aed1);
+
+
+  /* Background & Borders */
+  --background-color: #2a2f36;
+  --secondary-background-color: #20232a;
+  /* --card-background: #2c3034; */
+  --card-background: #3c3f41;
+  --border-color: #495057;
+  --divider-color: #6c757d;
+
+  /* Text & Fonts */
+  --text-color: #f8f9fa;
+  --heading-color: #bdf12b !important;
+  --font-primary: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-size-base: 16px;
+  --font-size-xl: 32px;
+  --font-size-lg: 24px;
+  --font-size-md: 18px;
+  --font-size-sm: 14px;
+
+  /* Effects */
+  --shadow-color: #1a1a1a;
+  --secondary-shadow-color: rgba(0, 200, 255, 0.8);
+  --radius: 8px;
+  --transition-speed: 0.3s ease-in-out;
+
+  /* Component-Specific */
+  --navbar-bg: var(--card-background);
+  --navbar-text: var(--text-color);
+  --navbar-hover: var(--hover-color);
+  --footer-bg: var(--card-background);
+  --scroll-up-bg: var(--primary-color);
+  --scroll-up-color: #ffffff;
+  --link-color: #262626;
+  --theme-toggle-bg: var(--primary-color);
+  --theme-toggle-color: var(--text-color);
+
+  --link-color: #f8f9fa;
+
+  /* border specific */
+  --border-color: #2a2f38;
+  --border-opacity: 0.6;
+
+  /* Gradient */
+  /* --gradient: linear-gradient(270deg,#ff4d4d, #ffa64d, #4dff88, #4db8ff, #aa4dff, #ff4da6); */
+  --gradient: linear-gradient(270deg, #381616, #773c01, #00531c, #003457, #291d35, #3a1d2c);
+}
+
+/* ------------------------------------------------------- */
+/* END OF COLOR SCHEME VARIABLES */
+/* ------------------------------------------------------- */

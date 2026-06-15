@@ -1,0 +1,141 @@
+@import "colorScheme.css";
+
+/* ============================= */
+/* Skills Section Base */
+/* ============================= */
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  min-height: 100vh;
+  padding: 80px 5%;
+  scroll-margin-top: 20px;
+
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Title */
+.skills-title h1 {
+  margin-bottom: 50px;
+  color: var(--text-color);
+}
+
+/* ============================= */
+/* Skills Layout */
+/* ============================= */
+.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Category Card */
+.skill-category {
+  background-color: var(--card-background);
+  border-radius: 10px;
+
+  padding: 30px;
+  text-align: center;
+
+  box-shadow: 0 5px 15px var(--shadow-color);
+
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+/* Category Title */
+.skill-category h3 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 1.7rem;
+}
+
+/* ============================= */
+/* Skills Grid */
+/* ============================= */
+.skills-content-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Skill Item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Icons */
+.skill-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
+}
+
+/* Hover Effect */
+.skill-item:hover img {
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* Responsive - Tablet */
+/* ============================= */
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-category {
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+  }
+
+  .skills-content-box {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .skill-item img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .skill-item p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================= */
+/* Responsive - Mobile */
+/* ============================= */
+@media (max-width: 480px) {
+  .skill-category h3 {
+    font-size: 1.5rem;
+  }
+
+  .skills-content-box {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
+
+  .skill-item img {
+    width: 40px;
+    height: 40px;
+  }
+}

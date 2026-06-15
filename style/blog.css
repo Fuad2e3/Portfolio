@@ -1,0 +1,187 @@
+@import "colorScheme.css";
+
+/* ==========================================================================
+   Blog Section Base 
+   ========================================================================== */
+#blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  min-height: 100vh;
+  padding: 80px 5%;
+  scroll-margin-top: 20px;
+
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Title Header */
+.blog-title {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 60px;
+}
+
+.blog-title h1 {
+  color: var(--text-color);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.blog-title p {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Blog Layout Grid (No-Border Cards)
+   ========================================================================== */
+.blog-content-box {
+  display: grid;
+  /* Fluid layout system mirroring your auto-fit principles */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 75rem; /* 1200px ÷ 16 = 75em; 75em ÷ 16 = 50rem; */
+  margin: 0 auto;
+}
+
+/* Clean Blog Item */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent; /* No card box container */
+  overflow: hidden;
+}
+
+/* Image Presentation Frame */
+.blog-img-container {
+  width: 100%;
+  height: 220px;
+  border-radius: 10px; /* Consistent with your category rounding profile */
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.blog-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease; /* Matches your image scaling time profile */
+}
+
+/* Hover Interaction Layer */
+.blog-card:hover .blog-img-container img {
+  transform: scale(1.05);
+}
+
+/* Core Content & Metadata Typography */
+.blog-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+.blog-details h3 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.blog-card:hover .blog-details h3 {
+  color: var(--primary-color);
+}
+
+.blog-details p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85; /* Standardizes softer body presentation */
+  margin: 0;
+}
+
+/* Read Action Interactive Trigger */
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.blog-read-more i {
+  transition: transform 0.2s ease;
+}
+
+.blog-read-more:hover i {
+  transform: translateX(5px);
+}
+
+
+/* Hidden backdrop behavior */
+.article-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Activated State */
+.article-modal.open {
+  display: flex;
+}
+
+.modal-wrapper {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 50rem;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 15px; right: 20px;
+  background: transparent; border: none;
+  font-size: 2rem; color: var(--text-color);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 768px) {
+  .blog-title h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-content-box {
+    grid-template-columns: 1fr;
+    max-width: 32rem; /* Forces balanced single-column layout on smaller units */
+    gap: 2rem;
+  }
+}

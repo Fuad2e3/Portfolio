@@ -1,0 +1,145 @@
+/* === Contact Section === */
+#contacts {
+    padding: 100px 10%;
+    background-color: var(--background-color);
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--text-color);
+}
+
+.contact-title h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* === Layout === */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    margin-top: 50px;
+    align-items: start;
+}
+
+/* === Left Side: Info === */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-color);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background: rgba(var(--primary-rgb), 0.1);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.info-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.side-img {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+/* === Right Side: Form === */
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* === Button === */
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 10px;
+}
+
+.contact-form .btn i {
+    font-size: 1.3rem;
+}
+
+.contact-form .btn:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--secondary-shadow-color);
+}
+
+.contact-form .btn:hover i {
+    color: var(--text-color);
+}
+
+/* === Mobile Responsiveness === */
+@media (max-width: 960px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        order: 2;
+    }
+}

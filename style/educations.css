@@ -1,0 +1,235 @@
+@import "colorScheme.css";
+
+/* ===== Education Section Container ===== */
+#educations {
+  padding: 80px 5%;
+  text-align: center;
+  background-color: var(--secondary-background-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+  scroll-margin-top: 20px;
+}
+
+.educations-title h1 {
+  margin-bottom: 50px;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 2.2em;
+  transition: color 0.4s ease;
+}
+
+/* ===== Tab Selector Styles ===== */
+.educations-types {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.educations-types .tab-link {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--secondary-color);
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.educations-types .tab-link:hover {
+  color: var(--primary-color);
+}
+
+.educations-types .tab-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* ===== Content Display ===== */
+.educations-contents {
+  margin-top: 30px;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== Institution Card Styles ===== */
+.academy {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--card-background);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px var(--shadow-color);
+  margin-bottom: 25px;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.academy:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.academy-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.academy-pic img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Text Inside Card ===== */
+.academy-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  color: var(--heading-color);
+  font-weight: 600;
+  transition: color 0.4s ease;
+}
+
+.academy-content h3 {
+  font-size: 1.15em;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-decoration: none;            /* 🔥 Removes underline */
+  transition: color 0.3s ease;
+}
+
+.academy-content a {
+  text-decoration: none;            /* 🔥 Removes underline from anchor */
+}
+
+.academy-content a:hover h3 {
+  color: var(--hover-color);        /* Stylish hover effect for school name */
+}
+
+.academy-content p {
+  font-size: 0.95em;
+  color: var(--secondary-color);
+  transition: color 0.4s ease;
+}
+
+
+/* Certificates */
+/* Container holds all cards in a responsive horizontal wrap */
+.certificate-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Individual card styling */
+.certificate-card {
+  width: 280px;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Certificate image */
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #49007a;
+}
+
+/* Text info */
+.certificate-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.certificate-info h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+
+.certificate-info p {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.certificate-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.certificate-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .educations-types {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .educations-types .tab-link {
+    padding: 8px 15px;
+    font-size: 1em;
+  }
+
+  .academy {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .academy-pic {
+    margin-bottom: 15px;
+  }
+
+  .academy-content h2 {
+    font-size: 1.3em;
+  }
+
+  .academy-content h3 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .academy-pic img {
+    width: 80px;
+    height: 80px;
+  }
+}

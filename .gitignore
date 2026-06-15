@@ -1,0 +1,32 @@
+# Ignore JavaScript files
+script.js
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# CSS files
+responsiv_home.css
+
+# README files
+README2.md
+README3.md
+
+# Project directories
+backup/
+component/
+demo/
+logo/
+
+# Manifest files
+*.webmanifest
+
+# Optional: OS-generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Node modules if you use Node
+node_modules/
+
+# Optional: Logs
+*.log

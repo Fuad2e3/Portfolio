@@ -1,0 +1,143 @@
+.footer {
+  background-color: var(--card-background);
+  padding: 2px 5%;
+  font-size: 0.9em;
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  min-height: 50px;
+  width: 100%;
+
+  display: relative;
+}
+
+
+.scroll-up {
+  position: fixed;           /* stays on screen while scrolling */
+  right: 20px;               /* distance from right edge */
+  bottom: 30px;              /* distance from bottom of viewport */
+  font-size: 1.5rem;         /* larger for easy clicking */
+  background-color: #01bb29; /* nice professional blue */
+  color: #fff;               /* white arrow */
+  padding: 10px 12px;        /* clickable area */
+  border-radius: 50%;        /* circular button */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  display: none;             /* hidden initially */
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-up:hover {
+  background-color: #1d4ed8; /* slightly darker on hover */
+  transform: translateY(-2px);
+}
+
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.address a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.address a:hover {
+  text-decoration: underline;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-buttons img {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease;
+}
+
+.social-buttons img:hover {
+  transform: scale(1.15);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-buttons {
+  display: flex;
+  align-items: center; /* ⬅️ Ensures vertical alignment */
+  gap: 10px;
+}
+
+.social-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-buttons img {
+  width: 22px;
+  height: 22px;
+  color: white;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: invert(54%) sepia(81%) saturate(547%) hue-rotate(180deg) brightness(95%) contrast(95%);
+}
+
+.social-buttons img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.social-buttons a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.social-buttons a:hover img {
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.footer-row .social-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.copyright {
+  margin: 0;
+  padding: 0;
+}
+
+.copyright a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
