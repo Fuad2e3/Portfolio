@@ -130,13 +130,56 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background: var(--brand-gradient);
-    filter: blur(100px);
-    opacity: 0.15;
+    filter: blur(120px);
+    opacity: 0.2;
     z-index: 0;
     border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-45%, -55%) scale(1.1); }
+}
+
+/* Floating Bokeh Particles */
+#home::before, #home::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    filter: blur(80px);
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#home::before {
+    top: 10%;
+    left: 10%;
+    animation: move1 15s infinite alternate;
+}
+
+#home::after {
+    bottom: 10%;
+    right: 10%;
+    background: #7c3aed;
+    animation: move2 20s infinite alternate;
+}
+
+@keyframes move1 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(100px, 100px); }
+}
+
+@keyframes move2 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-100px, -50px); }
 }
 
 @media (max-width: 992px) {

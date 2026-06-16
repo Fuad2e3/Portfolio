@@ -1,130 +1,96 @@
-# 🌐 Abdullah Al Fuad — Developer Portfolio
+<div align="center">
 
-[![Version](https://img.shields.io/badge/Version-1.0.0-F07117?logo=Git&logoColor=green)](https://github.com/Fuad2e3/Portfolio)
-[![GitHub repo size](https://img.shields.io/github/repo-size/Fuad2e3/Portfolio)](https://github.com/Fuad2e3/Portfolio)
-[![Issues](https://img.shields.io/github/issues/Fuad2e3/Portfolio)](https://github.com/Fuad2e3/Portfolio/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/Fuad2e3/Portfolio)](https://github.com/Fuad2e3/Portfolio)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Fuad2e3/Portfolio)](https://github.com/Fuad2e3/Portfolio)
-[![Languages Count](https://img.shields.io/github/languages/count/Fuad2e3/Portfolio)](https://github.com/Fuad2e3/Portfolio)
-[![Top Language](https://img.shields.io/github/languages/top/Fuad2e3/Portfolio)](https://github.com/Fuad2e3/Portfolio)
-[![MIT License](https://img.shields.io/github/license/Fuad2e3/Portfolio)](LICENSE)
+# 🚀 Abdullah Al Fuad - Portfolio
+### **Flutter & Full-Stack Developer | CS Student at Green University of Bangladesh**
 
+[![Platform](https://img.shields.io/badge/Platform-Web-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://fuad2e3.github.io/Portfolio/)
+[![Framework](https://img.shields.io/badge/Framework-Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Backend](https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Database](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> A modern, responsive personal portfolio site built using HTML, CSS, and JavaScript — showcasing my projects, skills, and resume with smooth animations, theme switching, and clean design. Specialized in Flutter, Node.js, and Full-Stack development.
-
----
-
-## 📚 Table of Contents
-
-- [🌐 Abdullah Al Fuad — Developer Portfolio](#-abdullah-al-fuad--developer-portfolio)
-  - [🚀 Live Demo](#-live-demo)
-  - [📸 Preview](#-preview)
-  - [✨ Features](#-features)
-  - [🛠️ Tech Stack](#️-tech-stack)
-  - [📁 Folder Structure](#-folder-structure)
-  - [🧪 How to Run Locally](#-how-to-run-locally)
-  - [🤝 Contributing](#-contributing)
-  - [📄 License](#-license)
-  - [🌍 Let's Connect](#-lets-connect)
+**A professional, high-performance, and modern portfolio showcasing expertise in mobile and web development.**
 
 ---
 
-## 🚀 Live Demo
+[Live Demo](https://fuad2e3.github.io/Portfolio/) • [Key Features](#-key-features) • [Tech Stack](#-tech-stack) • [Contact](#-get-in-touch)
 
-🔗 **Visit now:** [Fuad2e3.github.io](https://Fuad2e3.github.io/)
-
----
-
-## 📸 Preview
-
-### 🏠 Home Page
-![Home Page](assets/image/readme/screenshot-home.png)
+</div>
 
 ---
 
-## ✨ Features
+## 📖 Overview
+Welcome to my professional portfolio! This project is a curated showcase of my journey as a **Flutter & Full-Stack Developer**. It features a modern, responsive design with advanced UI/UX elements like **Glassmorphism**, smooth animations, and a seamless **Dark/Light mode** transition. 
 
-- 📱 **Responsive Design** — Looks great on all devices
-- 🌓 **Light/Dark Theme Toggle** — User-controlled theme
-- 🎯 **Smooth Scrolling & Reveal Animations**
-- 💼 **Project Showcase** — Real-world examples of my work
-- 📄 **Resume Download** — Easily accessible CV
-- 🌐 **SEO Optimized** — With proper meta and Open Graph tags
-- 📬 **Contact Form** — Integrated with Formspree
+I specialize in building high-performance mobile applications using Flutter and robust backends with Node.js and Express.js, always adhering to **Clean Architecture** principles.
+
+---
+
+## ✨ Key Features
+- 💎 **Modern Glassmorphism:** Sleek, transparent UI elements with background blur effects.
+- 🌓 **Dynamic Theme:** Fully functional Dark and Light modes with persistent state.
+- 📱 **Fully Responsive:** Optimized for all devices—from mobile screens to large desktops.
+- 🚀 **Interactive Elements:** 
+  - Smooth scroll navigation.
+  - Animated stats counter for experience and projects.
+  - Hover glow and "shake" effects for skill icons.
+- 📈 **Technical Showcase:** Categorized technical expertise and featured projects.
+- 📧 **Direct Contact:** Integrated contact form powered by Formspree.
+
+---
+
+## 📁 Project Structure
+```text
+Portfolio/
+├── 📂 assets/          # Images, CV, and branding assets
+├── 📂 js/              # Core logic (Theme toggle, animations, navbar)
+├── 📂 style/           # Modular CSS for each section (About, Skills, Projects, etc.)
+├── 📄 index.html       # Main entry point
+└── 📄 README.md        # Project documentation
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category        | Tech                                                                 |
-|-----------------|----------------------------------------------------------------------|
-| **Frontend**    | HTML5, CSS3, JavaScript, Flutter (Mobile)                            |
-| **Backend**     | Node.js, Express.js, REST API                                        |
-| **Database**    | MySQL, Firebase                                                      |
-| **Tools**       | Git, GitHub, PM2, .env, CORS                                         |
-| **UI/UX**       | Font Awesome, AOS (Animate on Scroll)                                |
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | HTML5, CSS3, JavaScript (ES6+) |
+| **Animations** | AOS (Animate On Scroll), CSS Keyframes |
+| **Mobile Dev** | Flutter, Dart, Java, Android Studio |
+| **Backend** | Node.js, Express.js, REST API, JWT |
+| **Database** | MySQL, Firebase |
+| **Tools** | Git, GitHub, VS Code, PM2 |
+| **Architecture** | Clean Architecture Principles |
 
 ---
 
-## 📁 Folder Structure
+## 🚀 Getting Started
 
-```
-portfolio/
-├── index.html          # Main landing page
-├── assets/
-│   ├── image/          # Categorized images (Fuad, skills, social, etc.)
-│   ├── cv/             # Professional resume
-│   └── favicon.ico     # Site favicon
-├── js/
-│   ├── main.js         # Core animations and logic
-│   ├── navbar.js       # Mobile navigation
-│   └── themeToggle.js  # Theme management
-├── style/
-│   └── *.css           # Modular section-specific styles
-├── LICENSE             # MIT License
-└── README.md           # Project documentation
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Fuad2e3/Portfolio.git
+   ```
+2. **Open the project:**
+   Simply open `index.html` in your favorite browser.
 
 ---
 
-## 🧪 How to Run Locally
+## 🤝 Get In Touch
+I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
 
-Clone and run it in your browser:
-
-```bash
-git clone https://github.com/Fuad2e3/Portfolio.git
-cd Portfolio
-```
-
----
-
-## 🤝 Contributing
-
-Interested in contributing?
-
-1. Fork the repo
-2. Clone it: `git clone https://github.com/Fuad2e3/Portfolio.git`
-3. Create a new branch: `git checkout -b feature/your-feature-name`
-4. Commit and push: `git push origin feature/your-feature-name`
-5. Open a **Pull Request**
+- **Email:** [fuadkalaroa2002@gmail.com](mailto:fuadkalaroa2002@gmail.com)
+- **LinkedIn:** [linkedin.com/in/fuad2e3](https://linkedin.com/in/fuad2e3)
+- **GitHub:** [@Fuad2e3](https://github.com/Fuad2e3)
 
 ---
 
 ## 📄 License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This project is licensed under the [MIT License](LICENSE).
-Feel free to use, modify, and share it — just retain credit.
+<div align="center">
 
----
+**Developed with ❤️ by Team Softece**  
+*Portfolio*
 
-## 🌍 Let's Connect
-
-| Platform     | Link                                                                  |
-| ------------ | --------------------------------------------------------------------- |
-| 🌐 Portfolio | [Fuad2e3.github.io](https://Fuad2e3.github.io/)                       |
-| 📧 Email     | [fuadkalaroa2002@gmail.com](mailto:fuadkalaroa2002@gmail.com)         |
-| 💼 LinkedIn  | [Abdullah Al Fuad](https://linkedin.com/in/fuad2e3)                   |
-| 🧠 GitHub    | [Fuad2e3](https://github.com/Fuad2e3)                                 |
-
----
-✨ Happy Coding ✨
+</div>

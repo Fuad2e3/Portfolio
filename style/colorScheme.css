@@ -44,6 +44,7 @@
   --footer-bg: #f8fafc;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.5);
+  --card-glass: var(--card-background);
 }
 
 /* DARK THEME OVERRIDES */
@@ -56,7 +57,7 @@ body.dark-theme {
   --accent-color: #1e293b;
 
   /* Background & Borders */
-  --background-color: #0f172a;
+  --background-color: #0b1120;
   --secondary-background: #1e293b;
   --card-background: #1e293b;
   --border-color: #334155;
@@ -74,11 +75,12 @@ body.dark-theme {
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
 
   /* Component-Specific */
-  --navbar-bg: rgba(15, 23, 42, 0.8);
+  --navbar-bg: rgba(11, 17, 32, 0.8);
   --navbar-text: #f8fafc;
-  --footer-bg: #0f172a;
-  --glass-bg: rgba(30, 41, 59, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --footer-bg: #0b1120;
+  --glass-bg: rgba(30, 41, 59, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --card-glass: rgba(30, 41, 59, 0.4);
 }
 
 

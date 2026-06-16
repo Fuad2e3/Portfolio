@@ -1,5 +1,23 @@
 @import "colorScheme.css";
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-gradient);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
@@ -249,8 +267,8 @@ hr {
 }
 
 /* Animations */
-[data-aos] {
-    pointer-events: none;
+[data-aos].aos-animate {
+    pointer-events: auto;
 }
 .theme-icon {
     filter: none;

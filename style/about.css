@@ -27,6 +27,7 @@
 .about-picture-circle:hover {
     transform: scale(1.02);
     border-color: var(--primary-color);
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
 }
 
 .about-picture-circle img {
@@ -53,8 +54,11 @@
 .about-contact-info {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: var(--secondary-background);
+    background: var(--card-glass);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
     border-left: 4px solid var(--primary-color);
 }
 
@@ -76,12 +80,18 @@
 }
 
 .stat-num {
-    font-size: 3.5rem; /* Increased size */
+    font-size: 3.5rem;
     font-weight: 800;
     color: var(--primary-color);
     line-height: 1;
     margin-bottom: 0.8rem;
     font-family: var(--font-heading);
+    transition: var(--transition-smooth);
+}
+
+.stat-item:hover .stat-num {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
 }
 
 .stat-label {
