@@ -1,33 +1,44 @@
 // themeToggle.js
 
 const toggleButton = document.getElementById('themeToggle');
-const themeLogo = document.getElementById('theme-logo'); // Get the logo element
+const themeLogo = document.getElementById('theme-logo');
 const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const systemSettingDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Function to set the theme and update the logo
+// Function to set the theme
 function applyTheme(isDark) {
     if (isDark) {
         document.body.classList.add('dark-theme');
-        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        themeLogo.src = 'assets/logo-dark.png'; // Set dark logo
+        if (toggleButton) toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
     } else {
         document.body.classList.remove('dark-theme');
-        toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        themeLogo.src = 'assets/logo-light.png'; // Set light logo
+        if (toggleButton) toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
     }
+    // Save preference to localStorage
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
-// Apply initial theme
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    applyTheme(true);
+// 1. Initial Load Logic
+if (savedTheme) {
+    // If user previously chose a theme manually, use it
+    applyTheme(savedTheme === 'dark');
 } else {
-    applyTheme(false);
+    // Otherwise, follow system setting
+    applyTheme(systemSettingDark.matches);
 }
 
-// Toggle theme on click
-toggleButton.addEventListener('click', () => {
-    const isDark = !document.body.classList.contains('dark-theme');
-    applyTheme(isDark);
+// 2. Manual Toggle Click
+if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark-theme');
+        applyTheme(isDark);
+    });
+}
+
+// 3. Listen for System Theme Changes
+systemSettingDark.addEventListener('change', (e) => {
+    // Only auto-change if the user HAS NOT set a manual preference
+    if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches);
+    }
 });

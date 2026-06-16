@@ -1,85 +1,162 @@
 /* ==========================================================================
-   GLOBAL INTERACTIONS & PAGE ANIMATIONS (main.js)
+   GLOBAL INTERACTIONS (main.js)
    ========================================================================== */
 
-// === Scroll-To-Top Button ===
-const scrollUp = document.querySelector('.scroll-up');
-if (scrollUp) {
-  window.addEventListener('scroll', () => {
-    scrollUp.style.display = window.scrollY > 300 ? 'flex' : 'none';
-  });
-
-  scrollUp.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-// === Typing Text Animation ===
-const typingText = document.querySelector('.text-section .role');
-const phrases = ["Flutter & Full-Stack Developer", "Mobile App Enthusiast", "Node.js Backend Developer"];
-let phraseIndex = 0;
-let charIndex = 0;
-
-function type() {
-  if (!typingText) return;
-  typingText.textContent = phrases[phraseIndex].substring(0, charIndex++);
-  if (charIndex <= phrases[phraseIndex].length) {
-    setTimeout(type, 100);
-  } else {
-    setTimeout(erase, 1800);
-  }
-}
-
-function erase() {
-  if (!typingText) return;
-  typingText.textContent = phrases[phraseIndex].substring(0, charIndex--);
-  if (charIndex >= 0) {
-    setTimeout(erase, 50);
-  } else {
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    setTimeout(type, 1000);
-  }
-}
-
-// Run sequence instantly
-type();
-
-// === Education Tabs Activation ===
 document.addEventListener('DOMContentLoaded', () => {
-  const tabLinks = document.querySelectorAll('.educations-types .tab-link');
-  const tabContents = document.querySelectorAll('.educations-contents .tab-content');
 
-  if (tabLinks.length > 0) {
-    tabLinks[0].classList.add('active');
-    document.getElementById(tabLinks[0].dataset.tab)?.classList.add('active');
-  }
+    // === 1. Splash Screen Loader ===
+    const loader = document.getElementById('loader');
+    if (loader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.classList.add('fade-out');
+            }, 2000); // 2 second delay for branding
+        });
+    }
 
-  tabLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      tabLinks.forEach(l => l.classList.remove('active'));
-      tabContents.forEach(c => c.classList.remove('active'));
+    // === 2. Scroll-To-Top Button ===
+    const scrollUp = document.querySelector('.scroll-up');
+    if (scrollUp) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollUp.classList.add('show');
+            } else {
+                scrollUp.classList.remove('show');
+            }
+        });
 
-      link.classList.add('active');
-      document.getElementById(link.dataset.tab)?.classList.add('active');
+        scrollUp.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // === 3. Typing Text Animation ===
+    const typingText = document.querySelector('.role');
+    const phrases = ["Flutter & Full-Stack Developer", "Mobile App Specialist", "UI/UX Enthusiast"];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
+
+    function type() {
+        if (!typingText) return;
+
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            typingText.textContent = currentPhrase.substring(0, charIndex--);
+            typeSpeed = 50;
+        } else {
+            typingText.textContent = currentPhrase.substring(0, charIndex++);
+            typeSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex > currentPhrase.length) {
+            isDeleting = true;
+            typeSpeed = 2000;
+        } else if (isDeleting && charIndex < 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            charIndex = 0;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    type();
+
+    // === 4. Dynamic Stats Counter (Animated on View) ===
+    let animationActive = false; // Flag to prevent multiple simultaneous animations
+
+    function animateCounter(id, target) {
+        const obj = document.getElementById(id);
+        if (!obj) return;
+
+        let startTimestamp = null;
+        const duration = 1000; // Reduced from 2000 to 1000 for faster animation
+        const startValue = 0;
+
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerText = Math.floor(progress * (target - startValue) + startValue) + "+";
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                animationActive = false; // Animation finished
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    function runStatsUpdate() {
+        if (animationActive) return; // Don't start if already running
+        animationActive = true;
+
+        // Experience Years Calculation
+        const startDate = new Date('2021-09-01');
+        const today = new Date();
+        let years = today.getFullYear() - startDate.getFullYear();
+        const monthDiff = today.getMonth() - startDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < startDate.getDate())) {
+            years--;
+        }
+
+        // Count Projects from DOM
+        const projectsCount = document.querySelectorAll('.project-item').length;
+
+        // Start animations
+        animateCounter('exp-years', years);
+        animateCounter('project-count', projectsCount);
+    }
+
+    // Set up Intersection Observer
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runStatsUpdate();
+                } else {
+                    // Reset text only if not currently animating
+                    if (!animationActive) {
+                        const expYears = document.getElementById('exp-years');
+                        const projectCount = document.getElementById('project-count');
+                        if (expYears) expYears.textContent = "0+";
+                        if (projectCount) projectCount.textContent = "0+";
+                    }
+                }
+            });
+        }, { threshold: 0.2 }); // Trigger slightly earlier for smoother feel
+
+        observer.observe(aboutSection);
+    }
+
+    // === 5. Smooth Scroll for all links ===
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-  });
-});
 
-
-// === Blog Modal Script Integration ===
-document.querySelectorAll('.blog-read-more[data-target]').forEach(triggerButton => {
-  triggerButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    const modalId = triggerButton.getAttribute('data-target');
-    document.getElementById(modalId)?.classList.add('open');
-    document.body.style.overflow = 'hidden'; // Stop page scrolling background action
-  });
-});
-
-// Close mechanism
-document.querySelectorAll('.article-modal .close-modal-btn').forEach(closeButton => {
-  closeButton.addEventListener('click', () => {
-    closeButton.closest('.article-modal').classList.remove('open');
-    document.body.style.overflow = 'auto'; // Reset viewport parameters
-  });
+    // === AOS Initialization ===
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-in-out'
+        });
+    }
 });

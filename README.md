@@ -71,7 +71,6 @@
 ```
 portfolio/
 ├── index.html          # Main landing page
-├── blog.html           # Tech & Mobile blog
 ├── assets/
 │   ├── image/          # Categorized images (Fuad, skills, social, etc.)
 │   ├── cv/             # Professional resume

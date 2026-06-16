@@ -18,15 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // === Dynamic Navbar Highlighting ===
   function activateNavLink() {
     const navLinks = document.querySelectorAll('.navbar .menu-list a');
-    const currentPath = window.location.pathname;
 
-    // 1. Static file mapping check for independent sub-pages
-    if (currentPath.includes('blog.html')) {
-      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href').includes('blog.html')));
-      return;
-    }
-
-    // 2. Fallback single page tracking for sections (index.html / home)
+    // Fallback single page tracking for sections (index.html / home)
     const sections = document.querySelectorAll('section');
     let current = '';
 

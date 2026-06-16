@@ -1,194 +1,117 @@
-@import "colorScheme.css";
-
-/* ===== About Section Container ===== */
 #about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 80px 5%;
-  scroll-margin-top: 20px;
-  background-color: var(--secondary-background-color);
-  color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 80px 0;
 }
 
-/* ===== Section Title ===== */
-.about-title h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 60px;
-  color: var(--text-color);
-  text-align: center;
-  position: relative;
-}
-
-.about-title h1::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--primary-color);
-  margin: 12px auto 0;
-  border-radius: 2px;
-}
-
-/* ===== Main Layout ===== */
 .about-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  max-width: 1400px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-/* ===== Profile Image ===== */
 .about-picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-/* Base size for modern desktops & 24" monitors */
 .about-picture-circle {
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 6px solid var(--primary-color);
-  box-shadow: 0 15px 40px rgba(0, 200, 255, 0.5);
-  background-color: var(--card-background);
-  flex-shrink: 0;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 300px;
+    height: 300px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 8px solid var(--secondary-background);
+    box-shadow: var(--shadow-xl);
+    transition: var(--transition-smooth);
 }
 
 .about-picture-circle:hover {
-  transform: scale(1.03);
-  box-shadow: 0 20px 45px rgba(0, 200, 255, 0.6);
+    transform: scale(1.02);
+    border-color: var(--primary-color);
 }
 
 .about-picture-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ===== Text Block ===== */
-.about-intro {
-  flex: 1.2;
-  max-width: 750px;
-  text-align: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-intro h1 {
-  font-size: 2.6rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
 }
 
-.about-intro span {
-  color: var(--primary-color);
+.about-intro h1 span {
+    color: var(--primary-color);
 }
 
 .about-intro p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  margin-bottom: 16px;
-  color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
-/* ===== Contact Info ===== */
 .about-contact-info {
-  margin-top: 20px;
-  font-size: 1.05rem;
-  line-height: 1.6;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--secondary-background);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-color);
 }
 
-.about-contact-info a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.about-contact-info strong {
+    color: var(--heading-color);
 }
 
-.about-contact-info a:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin: 3rem 0;
 }
 
-/* =========================================
-   RESPONSIVE BREAKPOINTS (Desktop → Mobile)
-   ========================================= */
-
-/* 🖥️ Large Desktops & 24"+ Monitors (1440px+) */
-@media (min-width: 1440px) {
-  .about-content { gap: 100px; }
-  .about-picture-circle { width: 500px; height: 500px; }
-  .about-intro h1 { font-size: 3rem; }
-  .about-intro p { font-size: 1.2rem; }
-}
-
-@media (max-width: 1366px) {
-  .about-content {
-    gap: 40px;
-  }
-
-  .about-picture-circle {
-    width: 320px;
-    height: 320px;
-  }
-
-  .about-intro h1 {
-    font-size: 2rem;
-  }
-
-  .about-intro p {
-    font-size: 1rem;
-  }
-}
-
-/* 💻 Standard Laptops & 22" Monitors (max 1280px) */
-@media (max-width: 1280px) {
-  .about-content { gap: 60px; }
-  .about-picture-circle { width: 380px; height: 380px; }
-}
-
-/* 📱 Tablets & Small Laptops (max 1024px) */
-@media (max-width: 1024px) {
-  .about-content { gap: 45px; padding: 0 30px; }
-  .about-picture-circle { width: 320px; height: 320px; }
-  .about-intro h1 { font-size: 2.4rem; }
-}
-
-/* 📱 Tablet Portrait / Large Phones (max 768px) */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 35px;
-  }
-  .about-intro { text-align: justify; max-width: 100%; }
-  .about-picture-circle { width: 280px; height: 280px; margin-bottom: 5px; }
-  .about-btns { justify-content: center; }
-}
-
-/* 📱 Mobile Phones (max 480px) */
-@media (max-width: 480px) {
-  #about { padding: 50px 4%; }
-  .about-picture-circle { width: 220px; height: 220px; border-width: 4px; }
-  .about-intro h1 { font-size: 1.9rem; }
-  .about-intro p { font-size: 1rem; }
-  .stylish-btn { padding: 10px 20px; font-size: 0.95rem; }
-}
-
-@media (max-width: 397px) {
-  .about-intro h1 {
+.stat-item {
     display: flex;
     flex-direction: column;
-    font-size: 1.9rem; 
-  }
+    align-items: flex-start;
+}
+
+.stat-num {
+    font-size: 3.5rem; /* Increased size */
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.about-intro .cta-buttons {
+    margin-top: 1rem;
+}
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .about-picture-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-contact-info {
+        text-align: left;
+    }
 }
