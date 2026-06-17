@@ -103,9 +103,10 @@ img {
 
 .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
     border: 1px solid var(--glass-border);
+    will-change: transform, opacity;
 }
 
 .btn {
@@ -128,7 +129,7 @@ img {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 0 20px var(--glow-primary);
     filter: brightness(1.1);
 }
 
@@ -178,10 +179,17 @@ img {
 
 /* Horizontal Line */
 hr {
-    border: none;
-    height: 1px;
-    background: var(--divider-color);
-    margin: 4rem 0;
+    display: none; /* Hide old HRs to use section backgrounds instead */
+}
+
+/* Section Backgrounds */
+section:nth-of-type(even) {
+    background-color: var(--bg-alt);
+}
+
+section {
+    position: relative;
+    overflow: hidden;
 }
 
 /* Splash Screen Loader Styles */
@@ -267,6 +275,10 @@ hr {
 }
 
 /* Animations */
+[data-aos] {
+    will-change: transform, opacity;
+}
+
 [data-aos].aos-animate {
     pointer-events: auto;
 }
@@ -276,4 +288,44 @@ hr {
 
 body.dark-theme .theme-icon {
     filter: invert(1) brightness(2);
+}
+
+/* Custom Cursor */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    transition: width 0.3s, height 0.3s, background 0.3s;
+}
+
+.cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Hide Custom Cursor on Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot, .cursor-outline {
+        display: none !important;
+    }
 }

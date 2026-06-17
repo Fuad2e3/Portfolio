@@ -66,6 +66,27 @@
     color: var(--heading-color);
 }
 
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.copy-btn:hover {
+    background: var(--secondary-background);
+    transform: scale(1.1);
+}
+
+.copy-btn.copied {
+    color: #059669;
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -104,9 +125,6 @@
 
 .about-intro .cta-buttons {
     margin-top: 1rem;
-}
-    margin-top: 2rem;
-    margin-bottom: 0;
 }
 
 @media (max-width: 992px) {

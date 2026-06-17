@@ -5,14 +5,18 @@
 // === Mobile Menu Toggle ===
 function toggleMenuBar() {
   document.querySelector('.navbar .menu-list')?.classList.toggle('active');
+  document.querySelector('.nav-backdrop')?.classList.toggle('active');
+  document.body.style.overflow = document.querySelector('.menu-list').classList.contains('active') ? 'hidden' : '';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   // Close menu on link selection
   document.querySelectorAll('.navbar .menu-list a').forEach(link => {
-    link.addEventListener('click', () =>
-      document.querySelector('.navbar .menu-list')?.classList.remove('active')
-    );
+    link.addEventListener('click', () => {
+      document.querySelector('.navbar .menu-list')?.classList.remove('active');
+      document.querySelector('.nav-backdrop')?.classList.remove('active');
+      document.body.style.overflow = '';
+    });
   });
 
   // === Dynamic Navbar Highlighting ===

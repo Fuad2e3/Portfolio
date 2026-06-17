@@ -150,13 +150,139 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // === 6. Automatic Copyright Year ===
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // === 7. Copy Email Functionality ===
+    window.copyEmail = function() {
+        const email = "fuadkalaroa2002@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+            const copyBtn = document.querySelector('.copy-btn');
+            const originalIcon = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+            copyBtn.classList.add('copied');
+
+            setTimeout(() => {
+                copyBtn.innerHTML = originalIcon;
+                copyBtn.classList.remove('copied');
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    };
+
     // === AOS Initialization ===
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 1000,
+            duration: 800, // Slightly faster
             once: true,
-            offset: 100,
-            easing: 'ease-in-out'
+            offset: 50, // Trigger earlier
+            easing: 'ease-out-quad', // Faster easing
+            disable: 'mobile' // Optional: disable on mobile for max speed
         });
+    }
+
+    // === 8. Custom Cursor Movement ===
+    const dot = document.querySelector('.cursor-dot');
+    const outline = document.querySelector('.cursor-outline');
+
+    if (dot && outline && window.innerWidth > 768) {
+        let mouseX = 0, mouseY = 0;
+        let dotX = 0, dotY = 0;
+        let outlineX = 0, outlineY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            // Smooth follow logic
+            dotX += (mouseX - dotX) * 0.2;
+            dotY += (mouseY - dotY) * 0.2;
+            outlineX += (mouseX - outlineX) * 0.15;
+            outlineY += (mouseY - outlineY) * 0.15;
+
+            dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+            outline.style.transform = `translate(${outlineX - 16}px, ${outlineY - 16}px)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hover effect for links
+        document.querySelectorAll('a, button, .skill-item').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                outline.classList.add('hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                outline.classList.remove('hover');
+            });
+        });
+    }
+
+    // === 9. Vanilla Tilt Initialization ===
+    if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
+        VanillaTilt.init(document.querySelectorAll(".project-item, .skill-category"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+            gyroscope: false // Disable gyro for better performance
+        });
+    }
+
+    // === 10. "See More" Projects Toggle ===
+    const projectItems = document.querySelectorAll('.project-item');
+    const toggleBtn = document.getElementById('toggle-projects-btn');
+    const initialVisibleCount = 6;
+
+    if (projectItems.length > initialVisibleCount && toggleBtn) {
+        // Hide projects beyond the initial count
+        projectItems.forEach((item, index) => {
+            if (index >= initialVisibleCount) {
+                item.classList.add('hidden');
+            }
+        });
+
+        toggleBtn.addEventListener('click', () => {
+            const isExpanded = toggleBtn.classList.contains('active');
+
+            if (isExpanded) {
+                // Hide extra projects
+                projectItems.forEach((item, index) => {
+                    if (index >= initialVisibleCount) {
+                        item.classList.add('hidden');
+                    }
+                });
+                toggleBtn.innerHTML = 'See More <i class="fas fa-chevron-down"></i>';
+                toggleBtn.classList.remove('active');
+
+                // Scroll back to projects section smoothly
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                    window.scrollTo({
+                        top: projectsSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Show all projects
+                projectItems.forEach(item => item.classList.remove('hidden'));
+                toggleBtn.innerHTML = 'See Less <i class="fas fa-chevron-up"></i>';
+                toggleBtn.classList.add('active');
+            }
+
+            // Refresh AOS animations to handle newly visible items
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+    } else if (toggleBtn) {
+        // Hide button if not enough projects
+        toggleBtn.style.display = 'none';
     }
 });

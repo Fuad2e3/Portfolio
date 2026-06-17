@@ -38,13 +38,19 @@
   --radius-lg: 24px;
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+  /* Alternate Section Colors */
+  --bg-alt: #f1f5f9;
+  --glow-primary: rgba(37, 99, 235, 0.4);
+
   /* Component-Specific */
-  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+  --navbar-glass: rgba(255, 255, 255, 0.85);
   --navbar-text: #1e293b;
   --footer-bg: #f8fafc;
-  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.95);
   --glass-border: rgba(255, 255, 255, 0.5);
-  --card-glass: var(--card-background);
+  --card-glass: rgba(255, 255, 255, 1);
+  --blur-amount: 8px;
 }
 
 /* DARK THEME OVERRIDES */
@@ -68,6 +74,10 @@ body.dark-theme {
   --text-muted: #94a3b8;
   --heading-color: #ffffff;
 
+  /* Alternate Section Colors */
+  --bg-alt: #0f172a;
+  --glow-primary: rgba(96, 165, 250, 0.5);
+
   /* Effects */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
@@ -75,12 +85,13 @@ body.dark-theme {
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
 
   /* Component-Specific */
-  --navbar-bg: rgba(11, 17, 32, 0.8);
+  --navbar-bg: rgba(11, 17, 32, 0.9);
+  --navbar-glass: rgba(11, 17, 32, 0.85);
   --navbar-text: #f8fafc;
   --footer-bg: #0b1120;
-  --glass-bg: rgba(30, 41, 59, 0.6);
+  --glass-bg: rgba(30, 41, 59, 0.95);
   --glass-border: rgba(255, 255, 255, 0.05);
-  --card-glass: rgba(30, 41, 59, 0.4);
+  --card-glass: rgba(30, 41, 59, 0.9);
 }
 
 

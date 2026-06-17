@@ -35,6 +35,10 @@
 </head>
 
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <!-- Splash Screen Loader -->
     <div id="loader" class="loader-wrapper">
         <div class="loader-content">
@@ -49,6 +53,8 @@
     </div>
 
     <div class="main-div">
+
+        <div class="nav-backdrop" onclick="toggleMenuBar()"></div>
 
         <nav class="navbar">
             <a href="#home" class="logo">
@@ -109,7 +115,6 @@
                     </div>
                 </div>
             </section>
-            <hr>
 
             <!-- Example of an updated section -->
             <section id="about">
@@ -134,7 +139,11 @@
                         </p>
 
                         <p class="about-contact-info">
-                            <strong>Email:</strong> <a href="mailto:fuadkalaroa2002@gmail.com">fuadkalaroa2002@gmail.com</a><br>
+                            <strong>Email:</strong> <a href="mailto:fuadkalaroa2002@gmail.com" id="email-link">fuadkalaroa2002@gmail.com</a>
+                            <button class="copy-btn" onclick="copyEmail()" title="Copy Email">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <br>
                             <strong>Location:</strong> Dhaka, Bangladesh
                         </p>
 
@@ -152,8 +161,6 @@
                 </div>
             </section>
 
-            <hr>
-
             <!-- Skills Section -->
             <section id="skills">
                 <div class="section-title" data-aos="fade-up">
@@ -167,18 +174,22 @@
                             <div class="skill-item">
                                 <img src="https://raw.githubusercontent.com/flutter/website/main/src/_static/images/flutter-logo.svg" alt="Flutter" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg'">
                                 <p>Flutter</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 95%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://raw.githubusercontent.com/dart-lang/site-www/main/src/static-assets/sitemap/dart-logo.svg" alt="Dart" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg'">
                                 <p>Dart</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 90%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
                                 <p>Java</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 80%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio">
                                 <p>Android Studio</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 85%;"></div></div>
                             </div>
                         </div>
                     </div>
@@ -190,18 +201,22 @@
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
                                 <p>Node.js</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 88%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="theme-icon" alt="Express.js">
                                 <p>Express.js</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 85%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://raw.githubusercontent.com/Fuad2e3/Portfolio/main/assets/image/skills/api.png" alt="REST API" onerror="this.src='https://img.icons8.com/color/96/api.png'">
                                 <p>REST API</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 92%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://raw.githubusercontent.com/Fuad2e3/Portfolio/main/assets/image/skills/jwt.png" alt="JWT" onerror="this.src='https://img.icons8.com/color/96/shield.png'">
-                                <p>JWT <span class="badge">new</span></p>
+                                <p>JWT</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 80%;"></div></div>
                             </div>
                         </div>
                     </div>
@@ -213,10 +228,12 @@
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
                                 <p>MySQL</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 85%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
                                 <p>Firebase</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 88%;"></div></div>
                             </div>
                         </div>
                     </div>
@@ -228,28 +245,79 @@
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
                                 <p>VS Code</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 95%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://raw.githubusercontent.com/Fuad2e3/Portfolio/main/assets/image/skills/clean.png" alt="Clean Arch" onerror="this.src='https://img.icons8.com/color/96/stack.png'">
                                 <p>Clean Arch</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 85%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
                                 <p>Git</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 90%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="theme-icon" alt="GitHub">
                                 <p>GitHub</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 92%;"></div></div>
                             </div>
                             <div class="skill-item">
                                 <img src="https://raw.githubusercontent.com/Fuad2e3/Portfolio/main/assets/image/skills/pm2.png" alt="PM2" onerror="this.src='https://img.icons8.com/color/96/server.png'">
-                                <p>PM2 <span class="badge">new</span></p>
+                                <p>PM2</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 75%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Programming Languages -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                        <h3>Programming Languages</h3>
+                        <div class="skills-content-box">
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                                <p>HTML5</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 95%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                                <p>CSS3</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <p>JavaScript</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                                <p>Python</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Shell" class="theme-icon">
+                                <p>Shell</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 75%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/color/96/processor.png" alt="Assembly">
+                                <p>Assembly</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 70%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                                <p>C</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 82%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                                <p>C++</p>
+                                <div class="skill-progress"><div class="progress-fill" style="width: 85%;"></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <hr>
 
             <!-- Education Section -->
             <section id="educations">
@@ -283,8 +351,6 @@
                 </div>
             </section>
 
-            <hr>
-
             <!-- Project Section -->
             <section id="projects">
                 <div class="section-title" data-aos="fade-up">
@@ -296,7 +362,7 @@
                     <!-- ================= PROJECT 1 ================= -->
                     <div class="project-item" data-aos="fade-up">
                         <div class="project-img-container">
-                            <img src="assets/image/projects/placeholder.png" alt="E-Commerce App">
+                            <img src="assets/image/projects/placeholder.png" alt="E-Commerce App" loading="lazy" decoding="async">
                         </div>
                         <div class="project-details">
                             <h3>Mobile E-Commerce App</h3>
@@ -318,7 +384,7 @@
                     <!-- ================= PROJECT 2 ================= -->
                     <div class="project-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-img-container">
-                            <img src="assets/image/projects/placeholder.png" alt="Task System">
+                            <img src="assets/image/projects/placeholder.png" alt="Task System" loading="lazy" decoding="async">
                         </div>
                         <div class="project-details">
                             <h3>Task Management System</h3>
@@ -336,9 +402,297 @@
                         </div>
                     </div>
 
+                    <!-- ================= PROJECT 3 ================= -->
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Portfolio Website" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Modern Portfolio Website</h3>
+                            <p>
+                                A responsive and interactive portfolio website showcasing projects and skills. Built with modern CSS techniques and glassmorphism.
+                            </p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>AOS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn btn-primary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 4 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Inventory API" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Real-time Inventory API</h3>
+                            <p>A robust backend API for managing large-scale inventories with automated stock alerts.</p>
+                            <div class="project-tech"><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 5 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Python Scraper" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Advanced Web Scraper</h3>
+                            <p>Automated data extraction tool capable of bypassing common anti-scraping measures.</p>
+                            <div class="project-tech"><span>Python</span><span>BeautifulSoup</span><span>Selenium</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 6 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Social Media Dashboard" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Social Media Analytics</h3>
+                            <p>Dashboard for tracking engagement metrics across multiple social platforms.</p>
+                            <div class="project-tech"><span>React</span><span>Chart.js</span><span>Firebase</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 7 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Discord Bot" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Custom Discord Bot</h3>
+                            <p>A multi-purpose bot for server moderation and interactive games.</p>
+                            <div class="project-tech"><span>Node.js</span><span>Discord.js</span><span>SQLite</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 8 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Finance Tracker" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Personal Finance Tracker</h3>
+                            <p>Expense management app with visual reports and budget planning.</p>
+                            <div class="project-tech"><span>Flutter</span><span>SQLite</span><span>Provider</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 9 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Blog Engine" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Custom Blog Engine</h3>
+                            <p>Lightweight CMS focused on performance and SEO optimization.</p>
+                            <div class="project-tech"><span>Next.js</span><span>Tailwind CSS</span><span>Strapi</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 10 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="ML Classifier" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Image Classification Tool</h3>
+                            <p>Machine learning model to identify and categorize images with high accuracy.</p>
+                            <div class="project-tech"><span>Python</span><span>TensorFlow</span><span>Keras</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 11 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="IoT Controller" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Smart Home Controller</h3>
+                            <p>Mobile interface for controlling smart home devices via MQTT.</p>
+                            <div class="project-tech"><span>Flutter</span><span>MQTT</span><span>ESP32</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 12 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Auth Service" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Microservice Auth System</h3>
+                            <p>Scalable authentication service using JWT and OAuth2.</p>
+                            <div class="project-tech"><span>Go</span><span>Docker</span><span>Redis</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 13 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="E-Learning Platform" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>E-Learning Management</h3>
+                            <p>Platform for hosting and consuming interactive online courses.</p>
+                            <div class="project-tech"><span>React</span><span>Django</span><span>PostgreSQL</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 14 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Crypto Watcher" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Crypto Price Tracker</h3>
+                            <p>Live tracking of cryptocurrency prices with price alert notifications.</p>
+                            <div class="project-tech"><span>Flutter</span><span>WebSockets</span><span>APIs</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 15 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Recipe App" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Gourmet Recipe Finder</h3>
+                            <p>Application for discovering and saving recipes from around the world.</p>
+                            <div class="project-tech"><span>Kotlin</span><span>Room</span><span>Retrofit</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 16 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Dev Tools" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>CLI Developer Utilities</h3>
+                            <p>A collection of command-line tools to streamline daily developer tasks.</p>
+                            <div class="project-tech"><span>Rust</span><span>Clap</span><span>Serde</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 17 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Weather App" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Dynamic Weather Forecast</h3>
+                            <p>Real-time weather application with location-based notifications.</p>
+                            <div class="project-tech"><span>Swift</span><span>CoreLocation</span><span>API</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 18 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Chat App" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Encrypted Chat Room</h3>
+                            <p>Real-time messaging application with end-to-end encryption.</p>
+                            <div class="project-tech"><span>Node.js</span><span>Socket.io</span><span>CryptoJS</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 19 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Portfolio v1" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Legacy Portfolio Website</h3>
+                            <p>My first portfolio attempt, focusing on simple layouts and clean code.</p>
+                            <div class="project-tech"><span>HTML</span><span>Bootstrap</span><span>jQuery</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 20 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Fitness Tracker" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Personal Workout Planner</h3>
+                            <p>App to track gym progress and plan personalized workout routines.</p>
+                            <div class="project-tech"><span>Flutter</span><span>Hive</span><span>BLoC</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 21 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Stock Market API" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Market Data Aggregator</h3>
+                            <p>Backend system for collecting and normalizing stock market data.</p>
+                            <div class="project-tech"><span>Python</span><span>FastAPI</span><span>Redis</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 22 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Notes App" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Cloud-Synced Notes</h3>
+                            <p>Minimalist note-taking application with offline support and sync.</p>
+                            <div class="project-tech"><span>Vue.js</span><span>Firebase</span><span>Vuex</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Demo</a></div>
+                        </div>
+                    </div>
+
+                    <!-- ================= PROJECT 23 ================= -->
+                    <div class="project-item" data-aos="fade-up">
+                        <div class="project-img-container">
+                            <img src="assets/image/projects/placeholder.png" alt="Music Player" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-details">
+                            <h3>Custom Music Player</h3>
+                            <p>A fully functional local music player with playlist management.</p>
+                            <div class="project-tech"><span>JavaFX</span><span>Java</span><span>CSS</span></div>
+                            <div class="project-links"><a href="#" target="_blank" class="btn btn-primary">View Code</a></div>
+                        </div>
+                    </div>
+
                 </div>
+
+                <div class="projects-toggle-container" data-aos="fade-up">
+                    <button id="toggle-projects-btn" class="btn btn-secondary">
+                        See More <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
             </section>
-            <hr>
 
             <!-- TITLE -->
             <section id="contacts">
@@ -427,7 +781,7 @@
                     </div>
 
                     <div class="copyright">
-                        © 2024–2026 <a href="https://github.com/Fuad2e3" target="_blank">Abdullah Al Fuad</a>
+                        © 2021–<span id="current-year">2026</span> <a href="https://github.com/Fuad2e3" target="_blank">Abdullah Al Fuad</a>
                     </div>
 
                             <div class="social-buttons">
@@ -443,11 +797,26 @@
         <div class="scroll-up">
             <i class="fas fa-chevron-up"></i>
         </div>
+
+        <!-- Floating Action Button -->
+        <div class="fab-wrapper">
+            <button class="fab-main" title="Quick Connect">
+                <i class="fas fa-comments"></i>
+            </button>
+            <div class="fab-list">
+                <a href="https://wa.me/+8801700000000" target="_blank" class="fab-item whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://m.me/fuad.islam.2010" target="_blank" class="fab-item messenger" title="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="mailto:fuadkalaroa2002@gmail.com" class="fab-item email" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </div>
 
     <script src="js/themeToggle.js"></script>
     <script src="js/main.js"></script>
     <script src="js/navbar.js"></script>
+
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
         integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="

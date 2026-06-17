@@ -58,7 +58,8 @@
 .bio {
     max-width: 600px;
     margin-bottom: 2.5rem;
-    font-size: 1.1rem;
+    font-size: 1.15rem; /* Increased size slightly */
+    line-height: 1.8;
 }
 
 .cta-buttons {
@@ -87,10 +88,11 @@
 }
 
 .social-button:hover {
-    background: var(--primary-color);
+    background: var(--brand-gradient); /* Use gradient on hover */
     color: white;
     transform: translateY(-5px);
-    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px var(--glow-primary);
+    border-color: transparent;
 }
 
 /* Image Section with Modern Blob */
