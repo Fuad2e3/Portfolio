@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1ff9ca-6205-417b-9e16-f0f63f858ea6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Portfolio.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/planningMode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/colorScheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/colorScheme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/contacts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/projects.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/skills.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/skills.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +62,10 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fuadk/Documents/GitHub/Portfolio&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>

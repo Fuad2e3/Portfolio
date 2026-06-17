@@ -142,10 +142,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                // Determine scrolling duration based on distance
+                const startPos = window.pageYOffset;
+                const targetPos = targetElement.offsetTop - 80;
+                const distance = Math.abs(targetPos - startPos);
+
+                // If distance is large, use instant scroll for "super fast" feel
+                if (distance > 1500) {
+                     window.scrollTo({
+                        top: targetPos,
+                        behavior: 'auto'
+                    });
+                } else {
+                    window.scrollTo({
+                        top: targetPos,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
@@ -182,45 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
             offset: 50, // Trigger earlier
             easing: 'ease-out-quad', // Faster easing
             disable: 'mobile' // Optional: disable on mobile for max speed
-        });
-    }
-
-    // === 8. Custom Cursor Movement ===
-    const dot = document.querySelector('.cursor-dot');
-    const outline = document.querySelector('.cursor-outline');
-
-    if (dot && outline && window.innerWidth > 768) {
-        let mouseX = 0, mouseY = 0;
-        let dotX = 0, dotY = 0;
-        let outlineX = 0, outlineY = 0;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        function animateCursor() {
-            // Smooth follow logic
-            dotX += (mouseX - dotX) * 0.2;
-            dotY += (mouseY - dotY) * 0.2;
-            outlineX += (mouseX - outlineX) * 0.15;
-            outlineY += (mouseY - outlineY) * 0.15;
-
-            dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
-            outline.style.transform = `translate(${outlineX - 16}px, ${outlineY - 16}px)`;
-
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Hover effect for links
-        document.querySelectorAll('a, button, .skill-item').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                outline.classList.add('hover');
-            });
-            link.addEventListener('mouseleave', () => {
-                outline.classList.remove('hover');
-            });
         });
     }
 
