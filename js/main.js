@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // === AOS Initialization ===
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 400, // Faster animation
+            duration: 300, // Faster animation (reduced from 400)
             once: true,
-            offset: 50, // Trigger earlier
-            easing: 'ease-out-quad', // Faster easing
-            disable: 'mobile' // Optional: disable on mobile for max speed
+            offset: 20, // Reduced offset so it triggers much earlier
+            easing: 'ease-out-quad',
+            disable: 'mobile'
         });
     }
 

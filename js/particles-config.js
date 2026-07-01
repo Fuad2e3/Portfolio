@@ -4,12 +4,12 @@
 
 function loadParticles(isDark) {
     const color = isDark ? "#ffffff" : "#2563eb"; // White for dark, Blue for light
-    const opacity = isDark ? 0.4 : 0.2;
+    const opacity = isDark ? 0.4 : 0.6; // Increased opacity for light mode visibility
 
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 80,
+                "value": 100, // Slightly increased density
                 "density": {
                     "enable": true,
                     "value_area": 800
@@ -26,12 +26,12 @@ function loadParticles(isDark) {
                 }
             },
             "opacity": {
-                "value": 0.5,
+                "value": isDark ? 0.5 : 0.7, // Higher opacity in light mode
                 "random": true,
                 "anim": {
                     "enable": true,
                     "speed": 1,
-                    "opacity_min": 0.1,
+                    "opacity_min": 0.2,
                     "sync": false
                 }
             },
@@ -50,7 +50,7 @@ function loadParticles(isDark) {
                 "distance": 150,
                 "color": color,
                 "opacity": opacity,
-                "width": 1
+                "width": 1.5 // Slightly thicker lines for visibility
             },
             "move": {
                 "enable": true,
