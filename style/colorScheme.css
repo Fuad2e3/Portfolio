@@ -22,9 +22,9 @@
   --divider-color: #f1f5f9;
 
   /* Text & Fonts */
-  --text-main: #1e293b;
+  --text-main: #334155; /* Softer dark gray instead of deep slate */
   --text-muted: #64748b;
-  --heading-color: #0f172a;
+  --heading-color: #1e293b; /* Softer heading color */
   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Poppins', sans-serif;
 
@@ -70,9 +70,9 @@ body.dark-theme {
   --divider-color: #1e293b;
 
   /* Text & Fonts */
-  --text-main: #f8fafc;
+  --text-main: #cbd5e1; /* Softer light gray */
   --text-muted: #94a3b8;
-  --heading-color: #ffffff;
+  --heading-color: #f1f5f9; /* Softer off-white heading */
 
   /* Alternate Section Colors */
   --bg-alt: #0f172a;

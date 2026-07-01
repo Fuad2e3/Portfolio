@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🚀 Abdullah Al Fuad - Portfolio
-### **Flutter & Full-Stack Developer | CS Student at Green University of Bangladesh**
+### **Flutter & Full-Stack Developer | CSE Student at Green University of Bangladesh**
 
 [![Platform](https://img.shields.io/badge/Platform-Web-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://fuad2e3.github.io/Portfolio/)
 [![Framework](https://img.shields.io/badge/Framework-Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)

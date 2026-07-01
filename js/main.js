@@ -180,9 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // === AOS Initialization ===
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 300, // Faster animation (reduced from 400)
+            duration: 300,
             once: true,
-            offset: 20, // Reduced offset so it triggers much earlier
+            offset: 0,
             easing: 'ease-out-quad',
             disable: 'mobile'
         });
