@@ -14,6 +14,12 @@ function applyTheme(isDark) {
         document.body.classList.remove('dark-theme');
         if (toggleButton) toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
     }
+
+    // Update Particles to match theme
+    if (typeof loadParticles === 'function') {
+        loadParticles(isDark);
+    }
+
     // Save preference to localStorage
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
