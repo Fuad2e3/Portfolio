@@ -54,11 +54,9 @@
 .about-contact-info {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: var(--card-glass);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: var(--card-background); /* Optimized for performance */
     border-radius: var(--radius-md);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
 }
 

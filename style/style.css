@@ -102,11 +102,8 @@ img {
 }
 
 .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--blur-amount));
-    -webkit-backdrop-filter: blur(var(--blur-amount));
-    border: 1px solid var(--glass-border);
-    will-change: transform, opacity;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
 }
 
 .btn {
@@ -275,10 +272,6 @@ section {
 }
 
 /* Animations */
-[data-aos] {
-    will-change: transform, opacity;
-}
-
 [data-aos].aos-animate {
     pointer-events: auto;
 }
