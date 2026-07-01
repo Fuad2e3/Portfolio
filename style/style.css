@@ -192,12 +192,13 @@ hr {
 
 /* Section Backgrounds */
 section:nth-of-type(even) {
-    background-color: var(--bg-alt);
+    background-color: transparent;
 }
 
 section {
     position: relative;
     overflow: hidden;
+    background-color: transparent;
 }
 
 /* Splash Screen Loader Styles */
