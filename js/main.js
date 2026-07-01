@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(aboutSection);
     }
 
-    // === 5. Smooth Scroll for all links ===
+    // === 5. Fast Scroll for all links ===
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -142,23 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Determine scrolling duration based on distance
-                const startPos = window.pageYOffset;
                 const targetPos = targetElement.offsetTop - 80;
-                const distance = Math.abs(targetPos - startPos);
 
-                // If distance is large, use instant scroll for "super fast" feel
-                if (distance > 1500) {
-                     window.scrollTo({
-                        top: targetPos,
-                        behavior: 'auto'
-                    });
-                } else {
-                    window.scrollTo({
-                        top: targetPos,
-                        behavior: 'smooth'
-                    });
-                }
+                // Fast scroll behavior
+                window.scrollTo({
+                    top: targetPos,
+                    behavior: 'smooth'
+                });
             }
         });
     });
@@ -190,22 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // === AOS Initialization ===
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800, // Slightly faster
+            duration: 400, // Faster animation
             once: true,
             offset: 50, // Trigger earlier
             easing: 'ease-out-quad', // Faster easing
             disable: 'mobile' // Optional: disable on mobile for max speed
-        });
-    }
-
-    // === 9. Vanilla Tilt Initialization ===
-    if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
-        VanillaTilt.init(document.querySelectorAll(".project-item, .skill-category"), {
-            max: 10,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.3,
-            gyroscope: false // Disable gyro for better performance
         });
     }
 
