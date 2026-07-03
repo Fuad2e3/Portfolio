@@ -1,5 +1,5 @@
 #about {
-    padding: 80px 0;
+    /* Padding is handled globally in style.css */
 }
 
 .about-content {
@@ -46,9 +46,45 @@
 }
 
 .about-intro p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     font-size: 1.1rem;
     line-height: 1.8;
+    color: var(--text-main);
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: var(--secondary-background);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+}
+
+.highlight-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.highlight-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.highlight-item:hover {
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+    background: var(--card-background);
 }
 
 .about-contact-info {
@@ -95,30 +131,37 @@
 .stat-item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-.stat-num {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    line-height: 1;
-    margin-bottom: 0.8rem;
-    font-family: var(--font-heading);
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition-smooth);
 }
 
-.stat-item:hover .stat-num {
-    transform: scale(1.1);
-    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+.stat-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px var(--glow-primary);
+}
+
+.stat-num {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
 }
 
 .stat-label {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    text-align: center;
 }
 
 .about-intro .cta-buttons {

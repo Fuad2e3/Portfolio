@@ -1,5 +1,5 @@
 #projects {
-    padding: 80px 0;
+    /* Padding is handled globally in style.css */
 }
 
 .projects-content-box {
@@ -90,7 +90,7 @@
 .projects-toggle-container {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 #toggle-projects-btn {
