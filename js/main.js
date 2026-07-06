@@ -177,17 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // === AOS Initialization ===
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 300,
-            once: true,
-            offset: 0,
-            easing: 'ease-out-quad',
-            disable: 'mobile'
-        });
-    }
-
     // === 10. "See More" Projects Toggle ===
     const projectItems = document.querySelectorAll('.project-item');
     const toggleBtn = document.getElementById('toggle-projects-btn');
@@ -237,5 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (toggleBtn) {
         // Hide button if not enough projects
         toggleBtn.style.display = 'none';
+    }
+
+    // === AOS Initialization ===
+    // Moved to the end to ensure all layout shifts (like hiding projects) are done
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 300,
+            once: true,
+            offset: 0,
+            easing: 'ease-out-quad',
+            disable: 'mobile'
+        });
+        // Initial refresh to capture the state after DOMContentLoaded adjustments
+        AOS.refresh();
     }
 });
