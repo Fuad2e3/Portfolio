@@ -57,15 +57,17 @@ Portfolio/
 
 ## 🛠️ Tech Stack
 
-| Layer            | Technology                             |
-| :--------------- | :------------------------------------- |
-| **Frontend**     | HTML5, CSS3, JavaScript (ES6+)         |
-| **Animations**   | AOS (Animate On Scroll), CSS Keyframes |
-| **Mobile Dev**   | Flutter, Dart, Java, Android Studio    |
-| **Backend**      | Node.js, Express.js, REST API, JWT     |
-| **Database**     | MySQL, Firebase                        |
-| **Tools**        | Git, GitHub, VS Code, PM2              |
-| **Architecture** | Clean Architecture Principles          |
+| Layer            | Technology                                              |
+| :--------------- | :------------------------------------------------------ |
+| **Frontend**     | HTML5, CSS3, JavaScript (ES6+)                          |
+| **Animations**   | AOS (Animate On Scroll), CSS Keyframes                  |
+| **Mobile Dev**   | Flutter, Dart, Java, Android Studio                     |
+| **Backend**      | Node.js, Express.js, FastAPI, REST API, JWT, Payment Gateways |
+| **DevOps & Cloud** | VPS Hosting, Load Balancer, SMTP Server, PM2, Optimizer |
+| **Automation**   | Workflow Automation, Web Scraping & Lead Extraction     |
+| **Database**     | MySQL, Firebase                                         |
+| **Tools**        | Git, GitHub, VS Code                                    |
+| **Architecture** | Clean Architecture Principles                           |
 
 ---
 
