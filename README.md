@@ -59,7 +59,7 @@ Portfolio/
 
 | Layer            | Technology                                              |
 | :--------------- | :------------------------------------------------------ |
-| **Frontend**     | HTML5, CSS3, JavaScript (ES6+)                          |
+| **Web & Frontend** | HTML5, CSS3, JavaScript (ES6+), Bootstrap, Responsive Design |
 | **Animations**   | AOS (Animate On Scroll), CSS Keyframes                  |
 | **Mobile Dev**   | Flutter, Dart, Java, Android Studio                     |
 | **Backend**      | Node.js, Express.js, FastAPI, REST API, JWT, Payment Gateways |
