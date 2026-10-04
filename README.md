@@ -1,6 +1,7 @@
 <div align="center">
 
 # 🚀 Abdullah Al Fuad - Portfolio
+
 ### **Flutter & Full-Stack Developer | CSE Student at Green University of Bangladesh**
 
 [![Platform](https://img.shields.io/badge/Platform-Web-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://fuad2e3.github.io/Portfolio/)
@@ -20,17 +21,19 @@
 ---
 
 ## 📖 Overview
-Welcome to my professional portfolio! This project is a curated showcase of my journey as a **Flutter & Full-Stack Developer**. It features a modern, responsive design with advanced UI/UX elements like **Glassmorphism**, smooth animations, and a seamless **Dark/Light mode** transition. 
+
+Welcome to my professional portfolio! This project is a curated showcase of my journey as a **Flutter & Full-Stack Developer**. It features a modern, responsive design with advanced UI/UX elements like **Glassmorphism**, smooth animations, and a seamless **Dark/Light mode** transition.
 
 I specialize in building high-performance mobile applications using Flutter and robust backends with Node.js and Express.js, always adhering to **Clean Architecture** principles.
 
 ---
 
 ## ✨ Key Features
+
 - 💎 **Modern Glassmorphism:** Sleek, transparent UI elements with background blur effects.
 - 🌓 **Dynamic Theme:** Fully functional Dark and Light modes with persistent state.
 - 📱 **Fully Responsive:** Optimized for all devices—from mobile screens to large desktops.
-- 🚀 **Interactive Elements:** 
+- 🚀 **Interactive Elements:**
   - Smooth scroll navigation.
   - Animated stats counter for experience and projects.
   - Hover glow and "shake" effects for skill icons.
@@ -40,6 +43,7 @@ I specialize in building high-performance mobile applications using Flutter and 
 ---
 
 ## 📁 Project Structure
+
 ```text
 Portfolio/
 ├── 📂 assets/          # Images, CV, and branding assets
@@ -53,15 +57,15 @@ Portfolio/
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | HTML5, CSS3, JavaScript (ES6+) |
-| **Animations** | AOS (Animate On Scroll), CSS Keyframes |
-| **Mobile Dev** | Flutter, Dart, Java, Android Studio |
-| **Backend** | Node.js, Express.js, REST API, JWT |
-| **Database** | MySQL, Firebase |
-| **Tools** | Git, GitHub, VS Code, PM2 |
-| **Architecture** | Clean Architecture Principles |
+| Layer            | Technology                             |
+| :--------------- | :------------------------------------- |
+| **Frontend**     | HTML5, CSS3, JavaScript (ES6+)         |
+| **Animations**   | AOS (Animate On Scroll), CSS Keyframes |
+| **Mobile Dev**   | Flutter, Dart, Java, Android Studio    |
+| **Backend**      | Node.js, Express.js, REST API, JWT     |
+| **Database**     | MySQL, Firebase                        |
+| **Tools**        | Git, GitHub, VS Code, PM2              |
+| **Architecture** | Clean Architecture Principles          |
 
 ---
 
@@ -77,6 +81,7 @@ Portfolio/
 ---
 
 ## 🤝 Get In Touch
+
 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
 
 - **Email:** [fuadkalaroa2002@gmail.com](mailto:fuadkalaroa2002@gmail.com)
@@ -86,11 +91,12 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 ---
 
 ## 📄 License
+
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <div align="center">
 
 **Developed with ❤️ by Fuad**  
-*Portfolio*
+_Portfolio_
 
 </div>
