@@ -109,6 +109,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start animations
         animateCounter('exp-years', years);
         animateCounter('project-count', projectsCount);
+
+        // Fetch live repo count from GitHub API for real-time accuracy
+        fetch('https://api.github.com/users/Fuad2e3')
+            .then(res => res.json())
+            .then(data => {
+                if (data && typeof data.public_repos === 'number') {
+                    // Include non-repo web platforms in portfolio (+2)
+                    const totalProjects = Math.max(projectsCount, data.public_repos + 2);
+                    const projectCountEl = document.getElementById('project-count');
+                    if (projectCountEl) {
+                        projectCountEl.textContent = totalProjects + "+";
+                    }
+                }
+            })
+            .catch(() => {
+                // Fallback silently to DOM count
+            });
     }
 
     // Set up Intersection Observer
