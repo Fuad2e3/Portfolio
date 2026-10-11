@@ -71,17 +71,6 @@ Portfolio/
 
 ---
 
-## 🚀 Getting Started
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Fuad2e3/Portfolio.git
-   ```
-2. **Open the project:**
-   Simply open `index.html` in your favorite browser.
-
----
-
 ## 🤝 Get In Touch
 
 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
@@ -98,8 +87,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <div align="center">
 
-**Developed with ❤️ by Fuad**  
-*Developed by Softece*  
-*Abdullah Al Fuad Portfolio*
+**Developed ❤️ by Softece**
 
 </div>
