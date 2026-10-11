@@ -99,6 +99,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <div align="center">
 
 **Developed with ❤️ by Fuad**  
-_Portfolio_
+*Developed by Softece*  
+*Abdullah Al Fuad Portfolio*
 
 </div>
